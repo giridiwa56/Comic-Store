@@ -13,14 +13,14 @@ class ComicController{
     }
     static async add(req, res){
         try{
-            const{title, genre, price, page, image, information, publisherId} = req.body;
+            const{title, genre, price, page, image, description, publisherId} = req.body;
             const result = await comic.create({
                 title,
                 genre,
                 image,
                 price,
                 page,
-                information,
+                description,
                 publisherId,
             });
 
@@ -50,7 +50,7 @@ class ComicController{
     static async edit(req, res){
         try{
             const id = +req.params.id;
-            const {title, genre, price, page, image, information, publisherId} = req.body;
+            const {title, genre, price, page, image, description, publisherId} = req.body;
 
             const result = await comic.update(
                 {
@@ -59,7 +59,7 @@ class ComicController{
                 image,
                 price,
                 page,
-                information,
+                description,
                 publisherId,
                 },
                 {
