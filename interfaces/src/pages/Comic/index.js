@@ -29,12 +29,11 @@ const Comic = () => {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-md-6 col-sm-12">
-              <form method="GET">
+              <form method="GET" action="">
                 <input
                   type="text"
                   className="form-search"
                   placeholder="Search Comic"
-                  value=""
                 />
               </form>
             </div>
@@ -42,7 +41,7 @@ const Comic = () => {
         </div>
         <div className="rows">
           {comics.map((comic) => {
-            const { title, image, information, genre, price } = comic;
+            const { title, image, description, genre, price } = comic;
             return (
               <div className="coloumn">
                 <div className="comic-property">
@@ -54,7 +53,7 @@ const Comic = () => {
 
                       <div class="comic-content">
                         <h3>{title}</h3>
-                        <p>{information}</p>
+                        <p>{description}</p>
                         <span className="badge bg-info">Rp.{price}</span>
                       </div>
                   </div>
