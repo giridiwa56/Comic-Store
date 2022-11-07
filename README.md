@@ -49,7 +49,7 @@ Pengunaan API Dan DBeaver:
 }
 ```
 Setelah kalian selesai isi jangan lupa untuk membuat model 
-`npx sequelize-cli models:generate --name publisher --attributes name:string,avatar:string`
+`npx sequelize-cli models:generate --name publisher --attributes name:string,avatar:string,address:string`
 
 `npx sequelize-cli models:generate --name comic --atributtes title:string,image:string,genre:string,description:string,price:integer,page:integer,publisherId:integer`
 
