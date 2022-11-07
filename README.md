@@ -57,3 +57,6 @@ setelah selesai membuat model silahkan gunakan perintah untuk migrate:
 `npx sequelize-cli db:migrate`
 
 Lihat di DBeaver untuk hasilnya.
+
+Note :
+Jika API Dan Frond end Bermasalah seperti ACCESS-CONTROL-ALLOW-ORIGIN Block Oleh CORS Kalian Bisa Pake extensi Cors Unblock di Google Chrome.
