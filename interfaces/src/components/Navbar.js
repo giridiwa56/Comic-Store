@@ -7,7 +7,7 @@ const Navbar = () =>{
             <div className="container">
                 <a className="navbar-brand" href="/">Lapak Comic</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="bi bi-list"></i>
+                    <i class="bi bi-list text-2x"></i>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">

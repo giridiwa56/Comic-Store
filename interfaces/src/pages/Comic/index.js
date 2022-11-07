@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-
 import axios from "axios";
+
 
 const Comic = () => {
   const [comics, setComics] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
   const getComics = async () => {
     try {
       const comics = await axios({
@@ -20,7 +21,8 @@ const Comic = () => {
     getComics();
   }, []);
   
-
+  
+  
   return (
       <section className="comic">
         <div className="text-center text-xs pt-5">
@@ -29,18 +31,26 @@ const Comic = () => {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-md-6 col-sm-12">
-              <form method="GET" action="">
+              <form method="GET">
                 <input
                   type="text"
                   className="form-search"
-                  placeholder="Search Comic"
+                  placeholder="Search Comic" onChange={(event) =>{
+                    setSearchTerm(event.target.value);
+                  }}
                 />
               </form>
             </div>
           </div>
         </div>
         <div className="rows">
-          {comics.map((comic) => {
+          {comics.filter((val) =>{ 
+            if (searchTerm == ""){
+              return val
+            }else if(val.title.toLowerCase().includes(searchTerm.toLowerCase())){
+              return val
+            }
+        }).map((comic) => {
             const { title, image, description, genre, price } = comic;
             return (
               <div className="coloumn">
@@ -51,7 +61,7 @@ const Comic = () => {
                         <div className="comic-tag">{genre}</div>
                       </div>
 
-                      <div class="comic-content">
+                      <div className="comic-content">
                         <h3>{title}</h3>
                         <p>{description}</p>
                         <span className="badge bg-info">Rp.{price}</span>
